@@ -1,0 +1,12 @@
+--Esta instrucción nos permite confirmar una operación de "insert", "update" o "delete" en una tabla.
+
+--Si se realiza una de esas operaciones y no se hace inmediatamente un COMMIT ese cambio no se hace en la base de datos
+
+--Claro está se hace un COMMIT implícito si usted sale de la cuenta (con exit o quit)  o hace un create table, create view, drop table, drop view, grant, revoke, connect, disconnect, alter, audit o noaudit.
+
+--En el siguiente ejemplo se elimina a un candidato a un puesto de trabajo. Usa AdventureWorks:
+
+BEGIN TRANSACTION;   
+DELETE FROM HumanResources.JobCandidate  
+    WHERE JobCandidateID = 13;   
+COMMIT TRANSACTION; 
